@@ -65,37 +65,69 @@ const Events = [
     },
 ]
 
-
-//Возьмем даты из datepicker, пока такие.
-const DateFrom = dayjs('2021-11-19').format(DATE_FORMATS.calendarFormat);
+const BoatIds = [
+    'c7f37e8d',
+    '96a80485',
+    '2aba4565',
+    '0e4df7bf',
+    'f9665ade',
+    '609194d8',
+    'ae7487ef',
+    '40bb2c90',
+    'b201b343',
+    '1e080166',
+]
 
 let Output = {};
 
-//создать ключи для дней
-for (let day = 0; day < 7; day++) {
-    let date = dayjs(DateFrom).add(day, 'day').format(DATE_FORMATS.calendarFormat);
-    Output[date] = new Array;
-}
-
-Events.forEach(eventType => {
-    let amount = _.random(eventType.frequencyFrom, eventType.frequencyTo); //сколько ивентов в неделю
+BoatIds.forEach(boatId => {
+    //Задаём даты для генерации
+    let DateFrom = dayjs('2021-11-01');
+    const DateEnd = dayjs('2022-02-15');
+    const BoatId = boatId; //Будем пихать в каждый ивент
     
-    for (let i = 0; i < amount; i++) { 
-        //создаём ивент
-        let newEvent = {
-            type: eventType.type,
-            value: _.random(eventType.valueFrom, eventType.valueTo).toFixed(2)
+    
+    while( dayjs(DateFrom) < dayjs(DateEnd) ) {
+        //создать ключи для дней
+        for (let day = 0; day < 7; day++) {
+            let date = dayjs(DateFrom).add(day, 'day').format(DATE_FORMATS.calendarFormat);
+            if (_.isUndefined(Output[date])) Output[date] = new Array;
         }
-
-        //определяем день недели
-        let day = _.random(0, 6);
-        let date = dayjs(DateFrom).add(day, 'day').format(DATE_FORMATS.calendarFormat) //вот наша дата в заданной формате
-        
-        //кладем в соответствующий ключ
-        
-        Output[date].push(newEvent); //Cannot read property 'push' of undefined
+    
+        Events.forEach(eventType => {
+            let amount = _.random(eventType.frequencyFrom, eventType.frequencyTo); //сколько ивентов в неделю
+            
+            for (let i = 0; i < amount; i++) { 
+                //создаём ивент
+                let randomHours = _.random(0, 23);
+                let randomMinutes = _.random(0, 59);
+                if (randomHours < 10) randomHours = `0${randomHours}`;
+                if (randomMinutes < 10) randomMinutes = `0${randomMinutes}`;
+    
+                let newEvent = {
+                    'boatId': BoatId,
+                    type: eventType.type,
+                    value: _.random(eventType.valueFrom, eventType.valueTo).toFixed(2),
+                    time: `${randomHours}:${randomMinutes}`
+                }
+    
+                //определяем день недели
+                let day = _.random(0, 6);
+                let date = dayjs(DateFrom).add(day, 'day').format(DATE_FORMATS.calendarFormat) //вот наша дата в заданной формате
+                
+                //кладем в соответствующий ключ
+                
+                Output[date].push(newEvent); //Cannot read property 'push' of undefined
+            }
+        })
+    
+        DateFrom = dayjs(DateFrom).add(7, 'day');
+    
     }
 })
+
+
+
 
 Output = JSON.stringify(Output);
 
