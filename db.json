@@ -1,0 +1,91 @@
+{
+    "boats": [
+        { 
+            "id": 1, 
+            "boatId": "c7f37e8d", 
+            "name": "Equuleus", 
+            "port": "Dugi Rat", 
+            "miles": 102 
+        },
+        { 
+            "id": 2, 
+            "boatId": "96a80485", 
+            "name": "Chamaeleon", 
+            "port": "Senj", 
+            "miles": 38 
+        },
+        { 
+            "id": 3, 
+            "boatId": "2aba4565", 
+            "name": "Muscida", 
+            "port": "Sibenik", 
+            "miles": 261 
+        },
+        { 
+            "id": 4, 
+            "boatId": "0e4df7bf", 
+            "name": "Sagittarius", 
+            "port": "Fazana", 
+            "miles": 138 
+        },
+        { 
+            "id": 5, 
+            "boatId": "f9665ade", 
+            "name": "Wasat", 
+            "port": "Hvar", 
+            "miles": 154 
+        },
+        { 
+            "id": 6, 
+            "boatId": "609194d8", 
+            "name": "Alula Borealis", 
+            "port": "Kraljevica", 
+            "miles": 96 
+        },
+        { 
+            "id": 7, 
+            "boatId": "ae7487ef", 
+            "name": "Sualocin", 
+            "port": "Fazana", 
+            "miles": 182 
+        },
+        { 
+            "id": 8, 
+            "boatId": "40bb2c90", 
+            "name": "Marfik", 
+            "port": "Fazana", 
+            "miles": 59 
+        },
+        { 
+            "id": 9, 
+            "boatId": "b201b343", 
+            "name": "Nair al Saif", 
+            "port": "Omisalj", 
+            "miles": 155 
+        },
+        { 
+            "id": 10, 
+            "boatId": "1e080166", 
+            "name": "Pavo", 
+            "port": "Rabac", 
+            "miles": 149 
+        }
+
+    ],
+    "alerts": [
+        {
+            "id": 1, 
+            "boatId": 1,
+            "date": "2021-11-19", 
+            "type": "Engine", 
+            "value": "1886.00"
+        },
+        {
+            "id": 2, 
+            "boatId": 1,
+            "date": "2021-11-19", 
+            "type": "Engine", 
+            "value": "1886.00"
+        }
+    ]
+}

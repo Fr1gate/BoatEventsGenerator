@@ -1,0 +1,25 @@
+{
+  "2021-11-19": [{ "type": "Engine", "value": "1886.00" }],
+  "2021-11-20": [
+    { "type": "Depth", "value": "1.75" },
+    { "type": "Depth", "value": "1.52" }
+  ],
+  "2021-11-21": [{ "type": "Temp", "value": "48.00" }],
+  "2021-11-22": [
+    { "type": "Battery", "value": "10.16" },
+    { "type": "Wind", "value": "28.00" }
+  ],
+  "2021-11-23": [{ "type": "Wind", "value": "39.00" }],
+  "2021-11-24": [
+    { "type": "Engine", "value": "2839.00" },
+    { "type": "Engine", "value": "2795.00" },
+    { "type": "Engine", "value": "2635.00" }
+  ],
+  "2021-11-25": [
+    { "type": "Depth", "value": "2.95" },
+    { "type": "Engine", "value": "2563.00" },
+    { "type": "Temp", "value": "41.00" },
+    { "type": "Wind", "value": "34.00" },
+    { "type": "Wind", "value": "25.00" }
+  ]
+}
